@@ -18,32 +18,36 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="#">Hidden brand</a>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">Hidden brand</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
         </div>
       </div>
     </nav>
   </header>
+
   <main>
-    <div id="carouselExampleDark" class="carousel carousel-dark slide bg-light mb-4" data-bs-ride="carousel">
+    <section id="carouselExampleDark" class="carousel carousel-dark slide bg-light mb-4" data-bs-ride="carousel">
+      <h2 class="text-center m-5">Lançamentos</h2>
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -52,11 +56,6 @@
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
           <div class="container">
-            <div class="row m-5">
-              <div class="col-12">
-                <h2 class="text-center">Lançamentos</h2>
-              </div>
-            </div>
             <div class="row bg-ligh">
               <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/oHDi01Yn4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
               <div class="col-lg-6 col-md-6 col-sm-12">
@@ -77,13 +76,8 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="1000">
+        <div class="carousel-item" data-bs-interval="10000">
           <div class="container">
-            <div class="row m-5">
-              <div class="col-12">
-                <h2 class="text-center">Lançamentos</h2>
-              </div>
-            </div>
             <div class="row bg-ligh">
               <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/oHDi01Yn4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
               <div class="col-lg-6 col-md-6 col-sm-12">
@@ -104,13 +98,8 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="1000">
+        <div class="carousel-item" data-bs-interval="10000">
           <div class="container">
-            <div class="row m-5">
-              <div class="col-12">
-                <h2 class="text-center">Lançamentos</h2>
-              </div>
-            </div>
             <div class="row bg-ligh">
               <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/oHDi01Yn4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
               <div class="col-lg-6 col-md-6 col-sm-12">
@@ -140,8 +129,9 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>
-    <div class="container" id="destaques">
+    </section>
+
+    <section class="container" id="destaques">
       <div class="row mb-4 mt-4 justify-content-between">
         <div class="col-6 text-start">
           <h2 class="">Em destaque</h2>
@@ -162,20 +152,20 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-3"><img src="https://picsum.photos/300/400?1" /></div>
-        <div class="col-3"><img src="https://picsum.photos/300/400?2" /></div>
-        <div class="col-3"><img src="https://picsum.photos/300/400?3" /></div>
-        <div class="col-3"><img src="https://picsum.photos/300/400?4" /></div>
+      <div class="row align-items-center">
+        <img class="col-12 col-sm-6 col-lg-3 my-2" src="./images/aftersun.jpg" />
+        <img class="col-12 col-sm-6 col-lg-3 my-2" src="./images/armageddon-time.jpg" />
+        <img class="col-12 col-sm-6 col-lg-3 my-2" src="./images/call-jane.jpg" />
+        <img class="col-12 col-sm-6 col-lg-3 my-2" src="./images/decision-to-leave.jpg" />
       </div>
       <div class="row mt-4 mb-4">
         <div class="col-12 text-end">
           <button class="btn btn-primary "><img src="images/plus-solid.svg" />Carregar mais filmes</button>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="container mb-4 mt-4">
+    <section id="ultimas-avaliacoes" class="container mb-4 mt-4">
       <h2 class="text-start mb-5">Últimas Avaliações</h2>
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -251,68 +241,102 @@
           <button class="btn btn-primary "><img src="images/plus-solid.svg" />Carregar mais avaliações</button>
         </div>
       </div>
-    </div>
-    <div class="container-fluid bg-light pt-5 pb-5">
-      <div class="container mb-4 mt-4 ">
+    </section>
+
+    <section id="entrevistas-making-of" class="container-fluid bg-light pt-5 pb-5">
+      <div class="container">
         <h2 class="text-start mb-5">Entrevistas & Making Of</h2>
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <iframe src="https://www.youtube.com/embed/oHDi01Yn4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h4><strong>Filme: </strong>Pantera Negra 3</h4>
-            <p><strong>Diretor: </strong> João Mesquista</p>
-            <div class="d-flex">
-              <p class="pe-xl-4"><strong>Roteiro: </strong> Mauro Tavares </p>
-              <p><strong>Estreia: </strong>2022</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <iframe src="https://www.youtube.com/embed/oHDi01Yn4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h4><strong>Filme: </strong>Pantera Negra 3</h4>
-            <p><strong>Diretor: </strong> João Mesquista</p>
-            <div class="d-flex">
-              <p class="pe-xl-4"><strong>Roteiro: </strong> Mauro Tavares </p>
-              <p><strong>Estreia: </strong>2022</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <iframe src="https://www.youtube.com/embed/oHDi01Yn4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h4><strong>Filme: </strong>Pantera Negra 3</h4>
-            <p><strong>Diretor: </strong> João Mesquista</p>
-            <div class="d-flex">
-              <p class="pe-xl-4"><strong>Roteiro: </strong> Mauro Tavares </p>
-              <p><strong>Estreia: </strong>2022</p>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-4 mb-4">
-          <div class="col-12 text-end">
-            <button class="btn btn-primary "><img src="images/plus-solid.svg" />Carregar mais filmes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row mb-4 mt-4">
-        <div class="col-lg-8 col-md-8 col-sm-12">
-          <h2 class="text-start mb-5">Novidades</h2>
+        <div class="container mb-4 mt-4 ">
           <div class="row">
-            <div id="data-from-movie">conteudo</div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <iframe width="460" height="215" src="https://www.youtube.com/embed/NCGp5d2OpPc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h4><strong>Filme: </strong>Black Panther: Wakanda Forever</h4>
+              <p><strong>Diretor: </strong>Ryan Coogler</p>
+              <div class="d-flex">
+                <p class="pe-xl-4"><strong>Roteiro: </strong>Ryan Coogler e Joe Robert Cole</p>
+                <p><strong>Estreia: </strong>2022</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <iframe width="460" height="215" src="https://www.youtube.com/embed/V5GTOWDlfWo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h4><strong>Filme: </strong>Top Gun: Maverick</h4>
+              <p><strong>Diretor: </strong>Joseph Kosinski</p>
+              <div class="d-flex">
+                <p class="pe-xl-4"><strong>Roteiro: </strong>Jim Cash, Jack Epps Jr. e Peter Creig</p>
+                <p><strong>Estreia: </strong>2022</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+              <iframe width="460" height="215" src="https://www.youtube.com/embed/5yOJFJHqAms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <h4><strong>Filme: </strong>Harry Potter and the Order of the Phoenix</h4>
+              <p><strong>Diretor: </strong>David Yates</p>
+              <div class="d-flex">
+                <p class="pe-xl-4"><strong>Roteiro: </strong>Michael Goldenberg e J.K. Rowling</p>
+                <p><strong>Estreia: </strong>2007</p>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4 mb-4">
+            <div class="col-12 text-end">
+              <button class="btn btn-primary "><img src="images/plus-solid.svg" />Carregar mais filmes</button>
+            </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <h2 class="text-start mb-5">Sobre</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis recusandae obcaecati nulla magni quod cum laboriosam eaque omnis. Aliquid eos omnis alias, eaque minus sed deserunt temporibus ipsum exercitationem culpa iste impedit repellat soluta et nihil ut, tempora, iure accusantium animi obcaecati magni adipisci optio? Quasi neque magni tempore illo!</p>
+      </div>
 
-          <h2 class="text-start mb-5">Editorial</h2>
+      <div class="container">
+        <div class="row mb-4 mt-4">
+          <section id="novidades" class="col-lg-8 col-md-8 col-sm-12">
+            <h2 class="text-start mb-5">Novidades</h2>
+            <div class="row">
+              <div id="data-from-movie">conteudo</div>
+            </div>
+          </section>
+          <section id="sobre" class="col-lg-4 col-md-4 col-sm-12">
+            <h2 class="text-start mb-2 mt-4">Sobre</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis recusandae obcaecati nulla magni quod cum laboriosam eaque omnis. Aliquid eos omnis alias, eaque minus sed deserunt temporibus ipsum exercitationem culpa iste impedit repellat soluta et nihil ut, tempora, iure accusantium animi obcaecati magni adipisci optio? Quasi neque magni tempore illo!</p>
+
+            <h2 class="text-start mb-2 mt-4">Editorial</h2>
+            <ul class="editorial-list">
+              <li><b>Redação</b> Nome do Redator</li>
+              <li><b>Pesquisa</b> Nome do Pesquisador</li>
+              <li><b>Gerente Geral</b> Nome do Editor Chefe</li>
+            </ul>
 
 
-          <h2 class="text-start mb-5">redes sociais</h2>
+            <h2 class="text-start mb-2 mt-4">redes sociais</h2>
 
+            <ul class="socials-list">
+              <li><a href="https://www.facebook.com" target="_blank">
+                  <img src="./images/facebook.svg" alt="">
+                </a></li>
+              <li><a href="https://www.twitter.com" target="_blank">
+                  <img src="./images/twitter.svg" alt="">
+                </a></li>
+              <li><a href="https://www.instagram.com" target="_blank"><img src="./images/instagram.svg" alt="" srcset=""></a></li>
+            </ul>
 
+          </section>
+        </div>
+      </div>
+  </main>
+
+  <footer class="footer container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-4 col-sm-12 justify-content-end">
+          <a class="navbar-brand" href="#">Hidden brand</a>
+        </div>
+        <div class="col-lg-6 col-md-8 col-sm-12">
+          <p>
+            Copyright 2020 - Disciplina de Desenvolvimento de Interfaces Web -
+            <strong>ICEI PUC MINAS</strong>
+          </p>
         </div>
       </div>
     </div>
-  </main>
+  </footer>
+
 
   <script src="js/index.js"></script>
 
