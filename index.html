@@ -16,28 +16,36 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg text-light">
       <div class="container-fluid">
         <div class="container">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#">Hidden brand</a>
+          <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
+            <h2 class="site-title"><a class="navbar-brand text-light" href="index.html"><strong>Filmes.com</strong></a></h2>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active text-light" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link text-light" href="index.html#destaques">Destaques</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
+                <a class="nav-link text-light" href="index.html#avaliacoes">Avaliações</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="index.html#entrevistas">Entrevistas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="index.html#novidades">Novidades</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+            <form method="get" action="/search.html">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Pesquise pelo nome do filme" aria-label="Username" aria-describedby="basic-addon1" id="searchBox" onchange="clear()" content="termo" name="termo" />
+                <button id="searchButton" class="btn btn-warning">Buscar</button>
+              </div>
             </form>
           </div>
         </div>
@@ -46,31 +54,62 @@
   </header>
 
   <main>
-    <section id="carouselExampleDark" class="carousel carousel-dark slide bg-light mb-4" data-bs-ride="carousel">
-      <h2 class="text-center m-5">Lançamentos</h2>
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
+    <section id="carouselExampleDark" class="carousel carousel-dark slide bg-dark text-light pb-5" data-bs-ride="carousel">
+      <h2 class="text-center p-5">Lançamentos</h2>
+      <span id="search-results"></span>
+
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
           <div class="container">
-            <div class="row bg-ligh">
-              <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/oHDi01Yn4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <h3 class="text-start">Nome do Filme</h3>
-                <p>Sinopse: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi assumenda optio tenetur nam consequuntur. Iusto recusandae suscipit, mollitia perspiciatis ipsum, consectetur ratione culpa cum asperiores ad odit? Eos ex laborum nulla qui ipsam non excepturi!</p>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/wkn-Gb-Fhac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+              <div class="col-lg-5 col-md-5 col-sm-12">
+                <h3 class="text-start">Super Mario Bros. - O Filme</h3>
+                <p>Um encanador chamado Mario viaja por um labirinto subterrâneo com seu irmão, Luigi, tentando salvar uma princesa capturada. Adaptação cinematográfica do popular videogame...</p>
+                <div class="d-inline-flex justify-content-between w-100">
+                  <p><strong>Diretor: </strong>Aaron Horvath</p>
+                  <p><strong>Roteiro: </strong>Matthew Fogel</p>
+                  <p><strong>Estreia: </strong>2023</p>
+                </div>
                 <div class="d-inline-flex">
-                  <p><strong>Diretor: </strong>Nome do Diretor</p>
-                  <p><strong>Roteiro: </strong>Nome do Roteirista</p>
+                  <p><strong>Elenco: </strong>Chris Pratt(narração) | Anya Taylor-Joy(narração) | Charlie Day(narração)</p>
+                </div>
+                <br>
+                <div class="d-inline-flex">
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-regular.svg" alt="estrela" width="16px" />
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="10000">
+          <div class="container">
+            <div class="row bg-ligh">
+              <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/Vu7-JZOzOFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+              <div class="col-lg-5 col-md-5 col-sm-12">
+                <h3 class="text-start">Avatar: O caminho da Água</h3>
+                <p>Avatar: The Way of Water e um filme épico de ficção científica americano co-escrito, co-editado, co-produzido e dirigido por James Cameron, e produzido pela 20th Century S...</p>
+                <div class="d-inline-flex justify-content-between">
+                  <p><strong>Diretor: </strong>James Cameron</p>
+                  <p><strong>Roteiro: </strong>Simon Franglen</p>
                   <p><strong>Estreia: </strong>2022</p>
                 </div>
                 <div class="d-inline-flex">
-                  <p><strong>Elenco: </strong>Nome de ator(a) 1 | Nome de ator(a) 2 | Nome de ator(a) 3 | Nome de ator(a) 4</p>
+                  <p><strong>Elenco: </strong>Sam Worthington | Zoë Saldaña | Sigourney Weaver</p>
                 </div>
-                <div class="avaliacao">
-                  <p><strong>Avaliação</strong></p><span>*****</span>
+                <br>
+                <div class="d-inline-flex">
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-regular.svg" alt="estrela" width="16px" />
+
                 </div>
               </div>
             </div>
@@ -80,41 +119,25 @@
           <div class="container">
             <div class="row bg-ligh">
               <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/oHDi01Yn4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <h3 class="text-start">Nome do Filme</h3>
-                <p>Sinopse: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi assumenda optio tenetur nam consequuntur. Iusto recusandae suscipit, mollitia perspiciatis ipsum, consectetur ratione culpa cum asperiores ad odit? Eos ex laborum nulla qui ipsam non excepturi!</p>
+              <div class="col-lg-5 col-md-5 col-sm-12">
+                <h3 class="text-start">Pantera Negra: Wakanda Para Sempre</h3>
+                <p>Black Panther: Wakanda Forever é um futuro filme estadunidense de super-herói baseado no personagem Pantera Negra da Marvel Comics. Produzido pelo Marvel Studios e distrib...</p>
                 <div class="d-inline-flex">
-                  <p><strong>Diretor: </strong>Nome do Diretor</p>
-                  <p><strong>Roteiro: </strong>Nome do Roteirista</p>
+                  <p><strong>Diretor: </strong>Ryan Coogler</p>
+                  <p><strong>Roteiro: </strong>Kevin Feige</p>
                   <p><strong>Estreia: </strong>2022</p>
                 </div>
                 <div class="d-inline-flex">
-                  <p><strong>Elenco: </strong>Nome de ator(a) 1 | Nome de ator(a) 2 | Nome de ator(a) 3 | Nome de ator(a) 4</p>
+                  <p><strong>Elenco: </strong>Letitia Wright | Lupita Nyong'o | Danai Gurira</p>
                 </div>
-                <div class="avaliacao">
-                  <p><strong>Avaliação</strong></p><span>*****</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="10000">
-          <div class="container">
-            <div class="row bg-ligh">
-              <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/oHDi01Yn4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <h3 class="text-start">Avengers Infinity war</h3>
-                <p>Sinopse: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi assumenda optio tenetur nam consequuntur. Iusto recusandae suscipit, mollitia perspiciatis ipsum, consectetur ratione culpa cum asperiores ad odit? Eos ex laborum nulla qui ipsam non excepturi!</p>
+                <br>
                 <div class="d-inline-flex">
-                  <p><strong>Diretor: </strong>Nome do Diretor</p>
-                  <p><strong>Roteiro: </strong>Nome do Roteirista</p>
-                  <p><strong>Estreia: </strong>2022</p>
-                </div>
-                <div class="d-inline-flex">
-                  <p><strong>Elenco: </strong>Nome de ator(a) 1 | Nome de ator(a) 2 | Nome de ator(a) 3 | Nome de ator(a) 4</p>
-                </div>
-                <div class="avaliacao">
-                  <p><strong>Avaliação</strong></p><span>*****</span>
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-regular.svg" alt="estrela" width="16px" />
+
                 </div>
               </div>
             </div>
@@ -131,41 +154,32 @@
       </button>
     </section>
 
-    <section class="container" id="destaques">
-      <div class="row mb-4 mt-4 justify-content-between">
-        <div class="col-6 text-start">
-          <h2 class="">Em destaque</h2>
-        </div>
-        <div class="col-6 text-end">
-          <div class="dropdown open">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categoria
-            </button>
-            <div class="dropdown-menu" aria-labelledby="triggerId">
-              <button class="dropdown-item" href="#">Todos</button>
-              <button class="dropdown-item" href="#">Ação</button>
-              <button class="dropdown-item" href="#">Aventura</button>
-              <button class="dropdown-item" href="#">Drama</button>
-              <button class="dropdown-item" href="#">Terror</button>
+    <section>
+      <div class="container-fluid bg-warning pt-5 pb-5">
+        <div class="container" id="destaques">
+          <div class="row mb-5 pt-5 justify-content-between">
+            <div class="col-6 text-start">
+              <h2 class="">Filmes Populares</h2>
+            </div>
+            <div class="col-6 text-end">
+              <label for="" class="form-label"></label>
+              <select class="form-select form-select-lg" name="" id="ddl-menu-destaque">
+                <option selected>Selecione</option>
+              </select>
+            </div>
+          </div>
+          <div class="row align-items-center" id="em-destaque">
+          </div>
+          <div class="row mt-5 mb-5">
+            <div class="col-12 text-end">
+              <button class="btn btn-primary" id="btn_carregarMaisFilmes"><img src="images/plus-solid.svg" />Carregar mais filmes</button>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="row align-items-center">
-        <img class="col-12 col-sm-6 col-lg-3 my-2" src="./images/aftersun.jpg" />
-        <img class="col-12 col-sm-6 col-lg-3 my-2" src="./images/armageddon-time.jpg" />
-        <img class="col-12 col-sm-6 col-lg-3 my-2" src="./images/call-jane.jpg" />
-        <img class="col-12 col-sm-6 col-lg-3 my-2" src="./images/decision-to-leave.jpg" />
-      </div>
-      <div class="row mt-4 mb-4">
-        <div class="col-12 text-end">
-          <button class="btn btn-primary "><img src="images/plus-solid.svg" />Carregar mais filmes</button>
-        </div>
-      </div>
     </section>
 
-    <section id="ultimas-avaliacoes" class="container mb-4 mt-4">
+    <section id="avaliacoes" class="container mb-5 mt-5">
       <h2 class="text-start mb-5">Últimas Avaliações</h2>
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -236,21 +250,21 @@
         </div>
 
       </div>
-      <div class="row mt-4 mb-4">
+      <div class="row mt-5 mb-5">
         <div class="col-12 text-end">
           <button class="btn btn-primary "><img src="images/plus-solid.svg" />Carregar mais avaliações</button>
         </div>
       </div>
     </section>
 
-    <section id="entrevistas-making-of" class="container-fluid bg-light pt-5 pb-5">
+    <section id="entrevistas" class="container-fluid bg-light pt-5 pb-5">
       <div class="container">
         <h2 class="text-start mb-5">Entrevistas & Making Of</h2>
-        <div class="container mb-4 mt-4 ">
+        <div class="container mb-5 mt-5 ">
           <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
               <iframe width="460" height="215" src="https://www.youtube.com/embed/NCGp5d2OpPc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <h4><strong>Filme: </strong>Black Panther: Wakanda Forever</h4>
+              <h4>Black Panther: Wakanda Forever</h4>
               <p><strong>Diretor: </strong>Ryan Coogler</p>
               <div class="d-flex">
                 <p class="pe-xl-4"><strong>Roteiro: </strong>Ryan Coogler e Joe Robert Cole</p>
@@ -259,7 +273,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
               <iframe width="460" height="215" src="https://www.youtube.com/embed/V5GTOWDlfWo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <h4><strong>Filme: </strong>Top Gun: Maverick</h4>
+              <h4>Top Gun: Maverick</h4>
               <p><strong>Diretor: </strong>Joseph Kosinski</p>
               <div class="d-flex">
                 <p class="pe-xl-4"><strong>Roteiro: </strong>Jim Cash, Jack Epps Jr. e Peter Creig</p>
@@ -268,7 +282,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
               <iframe width="460" height="215" src="https://www.youtube.com/embed/5yOJFJHqAms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <h4><strong>Filme: </strong>Harry Potter and the Order of the Phoenix</h4>
+              <h4>Harry Potter and the Order of the Phoenix</h4>
               <p><strong>Diretor: </strong>David Yates</p>
               <div class="d-flex">
                 <p class="pe-xl-4"><strong>Roteiro: </strong>Michael Goldenberg e J.K. Rowling</p>
@@ -276,7 +290,7 @@
               </div>
             </div>
           </div>
-          <div class="row mt-4 mb-4">
+          <div class="row mt-5 mb-5">
             <div class="col-12 text-end">
               <button class="btn btn-primary "><img src="images/plus-solid.svg" />Carregar mais filmes</button>
             </div>
@@ -285,26 +299,26 @@
       </div>
 
       <div class="container">
-        <div class="row mb-4 mt-4">
+        <div class="row mb-5 mt-5">
           <section id="novidades" class="col-lg-8 col-md-8 col-sm-12">
-            <h2 class="text-start mb-5">Novidades</h2>
-            <div class="row">
-              <div id="data-from-movie">conteudo</div>
+            <div class="container-fluid">
+              <h2 class="text-start mb-5">Novidades</h2>
+              <div id="data-from-movie" class="row"></div>
             </div>
           </section>
           <section id="sobre" class="col-lg-4 col-md-4 col-sm-12">
-            <h2 class="text-start mb-2 mt-4">Sobre</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis recusandae obcaecati nulla magni quod cum laboriosam eaque omnis. Aliquid eos omnis alias, eaque minus sed deserunt temporibus ipsum exercitationem culpa iste impedit repellat soluta et nihil ut, tempora, iure accusantium animi obcaecati magni adipisci optio? Quasi neque magni tempore illo!</p>
+            <h2 class="text-start mb-2 mt-5">Sobre</h2>
+            <p>Somos um canal especializado em mídia visual, seja cinema, séries, animes, etc.</p>
 
-            <h2 class="text-start mb-2 mt-4">Editorial</h2>
+            <h2 class="text-start mb-2 mt-5">Editorial</h2>
             <ul class="editorial-list">
-              <li><b>Redação</b> Nome do Redator</li>
+              <li><b>Redação</b>João Gilberto</li>
               <li><b>Pesquisa</b> Nome do Pesquisador</li>
               <li><b>Gerente Geral</b> Nome do Editor Chefe</li>
             </ul>
 
 
-            <h2 class="text-start mb-2 mt-4">redes sociais</h2>
+            <h2 class="text-start mb-2 mt-5">redes sociais</h2>
 
             <ul class="socials-list">
               <li><a href="https://www.facebook.com" target="_blank">
@@ -321,6 +335,8 @@
       </div>
   </main>
 
+
+
   <footer class="footer container-fluid">
     <div class="container">
       <div class="row">
@@ -329,16 +345,16 @@
         </div>
         <div class="col-lg-6 col-md-8 col-sm-12">
           <p>
-            Copyright 2020 - Disciplina de Desenvolvimento de Interfaces Web -
-            <strong>ICEI PUC MINAS</strong>
+            Copyright 2022 - Disciplina de Desenvolvimento de Interfaces Web -
+            <strong>IEC PUC MINAS</strong>
           </p>
         </div>
       </div>
     </div>
   </footer>
 
-
   <script src="js/index.js"></script>
+  <!-- <script src="js/search.js"></script> -->
 
   <script src="https://kit.fontawesome.com/49ab1bcb55.js" crossorigin="anonymous"></script>
   <!-- Bootstrap JavaScript Libraries -->

@@ -4,7 +4,10 @@
   --black-60: #888;
   --black-40: #aaa;
 
-  --amarelo: #fbfb04;
+  --azul-100: #000033;
+  --azul-300: #33aadd;
+  --laranja: #F29F05;
+  --vermelho: #F23030;
   --branco: #f2f2f2;
 }
 
@@ -16,7 +19,13 @@
   border-radius: 50%;
 }
 
-.btn.btn-primary > img {
+.btn.btn-primary {
+  background-color: var(--azul-300) !important;
+  border: var(--azul-300) !important;
+  ;
+}
+
+.btn.btn-primary>img {
   width: 16px;
   padding-right: 4px;
 }
@@ -71,4 +80,58 @@ section#sobre ul.socials-list li:first-child img {
 iframe {
   max-width: 100%;
   max-height: auto;
+}
+
+.bg-dark {
+  background-color: var(--azul-100) !important;
+}
+
+.navbar {
+  background-color: var(--azul-300) !important;
+}
+
+.vote_average {
+  background: var(--azul-300);
+  width: 40px;
+  height: 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  position: absolute;
+}
+
+.overview {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.site-title {
+  height: 42px !important;
+}
+
+a.navbar-brand.text-light:after {
+  content: '';
+  background-color: #FFC107;
+  height: 6px;
+  width: 100%;
+  display: block;
+}
+
+.text-truncate-container {
+  width: 250px;
+}
+
+.text-truncate-container p {
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-truncate-personal {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
