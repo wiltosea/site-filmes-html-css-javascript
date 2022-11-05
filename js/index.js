@@ -1,16 +1,19 @@
 const api_key = '092359d9c97f9c3506f7647df0f40315';
-const url = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=pt-BR&page=1`;
+const url = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=pt-BR&page=`;
+let currentPage = 1;
 
 fetch(
-  `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}&language=pt-br`,
+  `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}&language=pt-br`
 ).then(function (response) {
-  var contentType = response.headers.get('content-type');
+  let contentType = response.headers.get('content-type');
   if (contentType && contentType.indexOf('application/json') !== -1) {
     return response.json().then(function (json) {
       for (let i = 0; i <= json.genres.length; i++) {
-        document.getElementById(
-          'ddl-menu-destaque',
-        ).innerHTML += `<option value=${json.genres[i].name} class="dropdown-item" id="ddl-menu-destaque-option" key=${json.genres[i].id}>${json.genres[i].name}</option>`;
+        if (json?.genres?.[i]?.name) {
+          document.getElementById(
+            'ddl-menu-destaque'
+          ).innerHTML += `<option value=${json.genres[i].name} class="dropdown-item" id="ddl-menu-destaque-option" key=${json.genres[i].id}>${json.genres[i].name}</option>`;
+        }
       }
     });
   } else {
@@ -18,14 +21,16 @@ fetch(
   }
 });
 
-fetch(url).then(function (response) {
-  var contentType = response.headers.get('content-type');
+fetch(url + currentPage).then(function (response) {
+  let contentType = response.headers.get('content-type');
   if (contentType && contentType.indexOf('application/json') !== -1) {
     return response.json().then(function (json) {
       for (let i = 0; i <= json.results.length; i++) {
-        document.getElementById(
-          'data-from-movie',
-        ).innerHTML += `<span>${json.results[i].title}</span>`;
+        if (json?.results?.[i]?.title) {
+          document.getElementById(
+            'data-from-movie'
+          ).innerHTML += `<span>${json.results[i].title}</span>`;
+        }
       }
     });
   } else {
@@ -38,15 +43,21 @@ fetch(url).then(function (response) {
 // https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=pt-BR&page=1
 
 let qtdFilmes = 4;
-let placeId = 'em-destaque';
 const loadMore = () => {
   document
     .getElementById('btn_carregarMaisFilmes')
     .addEventListener('click', () => {
       // console.log('teste');
       qtdFilmes = qtdFilmes + 4;
-      document.getElementById(placeId).innerHTML = '';
-      return getImagesFromFilms(url, 'em-destaque', qtdFilmes);
+
+      // Lógica para pegar mais de 20 filmes
+      if (qtdFilmes % 20 === 4) {
+        currentPage++;
+        qtdFilmes = 4;
+      }
+
+      // document.getElementById(placeId).innerHTML = '';
+      return getImagesFromFilms(url + currentPage, qtdFilmes);
     });
 };
 
@@ -73,13 +84,14 @@ function imageBackDrop(image) {
 }
 
 //função para montar o node html do card de imagens de destaque
-function getImagesFromFilms(url, placeId, qtdFilmes) {
+function getImagesFromFilms(url, qtdFilmes) {
+  const placeId = 'em-destaque';
   // debugger;
   fetch(url).then(function (response) {
-    var contentType = response.headers.get('content-type');
+    let contentType = response.headers.get('content-type');
     if (contentType && contentType.indexOf('application/json') !== -1) {
       return response.json().then(function (json) {
-        for (let i = 0; i < qtdFilmes; i++) {
+        for (let i = qtdFilmes - 4; i < qtdFilmes; i++) {
           // let imagem = '';
           let ano = json.results[i].release_date;
           ano = ano.split('-');
@@ -117,4 +129,4 @@ function getImagesFromFilms(url, placeId, qtdFilmes) {
   });
 }
 
-getImagesFromFilms(url, placeId, qtdFilmes);
+getImagesFromFilms(url + currentPage, qtdFilmes);
