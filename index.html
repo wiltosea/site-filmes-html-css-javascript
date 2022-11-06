@@ -1,368 +1,681 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Filmes</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <title>Filmes</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS v5.2.0-beta1 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- CSS Interno-->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-  <!-- CSS Interno-->
-  <link rel="stylesheet" href="css/main.css">
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg text-light">
-      <div class="container-fluid">
-        <div class="container">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
-            <h2 class="site-title"><a class="navbar-brand text-light" href="index.html"><strong>Filmes.com</strong></a></h2>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active text-light" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="index.html#destaques">Destaques</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="index.html#avaliacoes">Avaliações</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="index.html#entrevistas">Entrevistas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="index.html#novidades">Novidades</a>
-              </li>
-            </ul>
-            <form method="get" action="/search.html">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Pesquise pelo nome do filme" aria-label="Username" aria-describedby="basic-addon1" id="searchBox" onchange="clear()" content="termo" name="termo" />
-                <button id="searchButton" class="btn btn-warning">Buscar</button>
-              </div>
-            </form>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg text-light">
+        <div class="container-fluid">
+          <div class="container">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarTogglerDemo01"
+              aria-controls="navbarTogglerDemo01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <h2 class="site-title">
+                <a class="navbar-brand text-light" href="index.html"
+                  ><strong>Filmes.com</strong></a
+                >
+              </h2>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active text-light"
+                    aria-current="page"
+                    href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="index.html#destaques"
+                    >Destaques</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="index.html#avaliacoes"
+                    >Avaliações</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="index.html#entrevistas"
+                    >Entrevistas</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="index.html#novidades"
+                    >Novidades</a
+                  >
+                </li>
+              </ul>
+              <form method="get" action="/search.html">
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Pesquise pelo nome do filme"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                    id="searchBox"
+                    onchange="clear()"
+                    content="termo"
+                    name="termo"
+                  />
+                  <button id="searchButton" class="btn btn-warning">
+                    Buscar
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <main>
-    <section id="carouselExampleDark" class="carousel carousel-dark slide bg-dark text-light pb-5" data-bs-ride="carousel">
-      <h2 class="text-center p-5">Lançamentos</h2>
-      <span id="search-results"></span>
+    <main>
+      <section
+        id="carouselExampleDark"
+        class="carousel carousel-dark slide bg-dark text-light pb-5"
+        data-bs-ride="carousel"
+      >
+        <h2 class="text-center p-5">Lançamentos</h2>
+        <span id="search-results"></span>
 
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <div class="container">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/wkn-Gb-Fhac"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                  <h3 class="text-start">Super Mario Bros. - O Filme</h3>
+                  <p>
+                    Um encanador chamado Mario viaja por um labirinto
+                    subterrâneo com seu irmão, Luigi, tentando salvar uma
+                    princesa capturada. Adaptação cinematográfica do popular
+                    videogame...
+                  </p>
+                  <div class="d-inline-flex justify-content-between w-100">
+                    <p><strong>Diretor: </strong>Aaron Horvath</p>
+                    <p><strong>Roteiro: </strong>Matthew Fogel</p>
+                    <p><strong>Estreia: </strong>2023</p>
+                  </div>
+                  <div class="d-inline-flex">
+                    <p>
+                      <strong>Elenco: </strong>Chris Pratt(narração) | Anya
+                      Taylor-Joy(narração) | Charlie Day(narração)
+                    </p>
+                  </div>
+                  <br />
+                  <div class="d-inline-flex">
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-regular.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="10000">
+            <div class="container">
+              <div class="row bg-ligh">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/Vu7-JZOzOFQ"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                  <h3 class="text-start">Avatar: O caminho da Água</h3>
+                  <p>
+                    Avatar: The Way of Water e um filme épico de ficção
+                    científica americano co-escrito, co-editado, co-produzido e
+                    dirigido por James Cameron, e produzido pela 20th Century
+                    S...
+                  </p>
+                  <div class="d-inline-flex justify-content-between">
+                    <p><strong>Diretor: </strong>James Cameron</p>
+                    <p><strong>Roteiro: </strong>Simon Franglen</p>
+                    <p><strong>Estreia: </strong>2022</p>
+                  </div>
+                  <div class="d-inline-flex">
+                    <p>
+                      <strong>Elenco: </strong>Sam Worthington | Zoë Saldaña |
+                      Sigourney Weaver
+                    </p>
+                  </div>
+                  <br />
+                  <div class="d-inline-flex">
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-regular.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="10000">
+            <div class="container">
+              <div class="row bg-ligh">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/oHDi01Yn4tY"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                  <h3 class="text-start">Pantera Negra: Wakanda Para Sempre</h3>
+                  <p>
+                    Black Panther: Wakanda Forever é um futuro filme
+                    estadunidense de super-herói baseado no personagem Pantera
+                    Negra da Marvel Comics. Produzido pelo Marvel Studios e
+                    distrib...
+                  </p>
+                  <div class="d-inline-flex">
+                    <p><strong>Diretor: </strong>Ryan Coogler</p>
+                    <p><strong>Roteiro: </strong>Kevin Feige</p>
+                    <p><strong>Estreia: </strong>2022</p>
+                  </div>
+                  <div class="d-inline-flex">
+                    <p>
+                      <strong>Elenco: </strong>Letitia Wright | Lupita Nyong'o |
+                      Danai Gurira
+                    </p>
+                  </div>
+                  <br />
+                  <div class="d-inline-flex">
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-solid.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                    <img
+                      src="images/star-regular.svg"
+                      alt="estrela"
+                      width="16px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </section>
+
+      <section>
+        <div class="container-fluid bg-warning pt-5 pb-5">
+          <div class="container" id="destaques">
+            <div class="row mb-5 pt-5 justify-content-between">
+              <div class="col-6 text-start">
+                <h2 class="">Filmes Populares</h2>
+              </div>
+              <!-- <div class="col-6 text-end">
+                <label for="" class="form-label"></label>
+                <select
+                  class="form-select form-select-lg"
+                  name=""
+                  id="ddl-menu-destaque"
+                >
+                  <option selected>Selecione</option>
+                </select>
+              </div> -->
+            </div>
+            <div class="row align-items-center" id="em-destaque"></div>
+            <div class="row mt-5 mb-5">
+              <div class="col-12 text-end">
+                <button class="btn btn-primary" id="btn_carregarMaisFilmes">
+                  <img src="images/plus-solid.svg" />Carregar mais filmes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="avaliacoes" class="container mb-4 mt-4">
+        <h2 class="text-start mb-5">Últimas Avaliações</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12">
             <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/wkn-Gb-Fhac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-              <div class="col-lg-5 col-md-5 col-sm-12">
-                <h3 class="text-start">Super Mario Bros. - O Filme</h3>
-                <p>Um encanador chamado Mario viaja por um labirinto subterrâneo com seu irmão, Luigi, tentando salvar uma princesa capturada. Adaptação cinematográfica do popular videogame...</p>
-                <div class="d-inline-flex justify-content-between w-100">
-                  <p><strong>Diretor: </strong>Aaron Horvath</p>
-                  <p><strong>Roteiro: </strong>Matthew Fogel</p>
-                  <p><strong>Estreia: </strong>2023</p>
+              <div class="col-lg-2 d-lg-block d-md-none user-avatar">
+                <img src="images/user-solid.svg" alt="estrela" />
+              </div>
+              <div class="col-lg-10 col-md-12">
+                <h3>Bárbara Alessandra</h3>
+                <p>
+                  <strong>Avaliação: </strong> Não gostei do filme. Pelo que li
+                  no livro, esperava muito mais das cenas do que os diretores
+                  conseguiram mostrar. Queria um remake.
+                </p>
+                <div class="d-inline-flex mb-5">
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img
+                    src="images/star-regular.svg"
+                    alt="estrela"
+                    width="16px"
+                  />
+                  <img
+                    src="images/star-regular.svg"
+                    alt="estrela"
+                    width="16px"
+                  />
+                  <img
+                    src="images/star-regular.svg"
+                    alt="estrela"
+                    width="16px"
+                  />
+                  <img
+                    src="images/star-regular.svg"
+                    alt="estrela"
+                    width="16px"
+                  />
+                  &nbsp;
+                  <strong>02/09/2022</strong>
                 </div>
-                <div class="d-inline-flex">
-                  <p><strong>Elenco: </strong>Chris Pratt(narração) | Anya Taylor-Joy(narração) | Charlie Day(narração)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="row">
+              <div class="col-lg-2 d-lg-block d-md-none user-avatar">
+                <img src="images/user-solid.svg" alt="estrela" />
+              </div>
+              <div class="col-lg-10 col-md-12">
+                <h3>Rafael Miglioli</h3>
+                <p>
+                  <strong>Avaliação: </strong> Achei o filme sensacional! A cena
+                  em que o ***** começa a lutar me deixou muito animado!
+                  Definitivamente um dos melhores filems de ação dos últimos
+                  tempos.
+                </p>
+                <div class="d-inline-flex mb-5">
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
+                  &nbsp;
+                  <strong>22/08/2022</strong>
                 </div>
-                <br>
-                <div class="d-inline-flex">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="row">
+              <div class="col-lg-2 d-lg-block d-md-none user-avatar">
+                <img src="images/user-solid.svg" alt="estrela" />
+              </div>
+              <div class="col-lg-10 col-md-12">
+                <h3>Carlos Nassif</h3>
+                <p>
+                  <strong>Avaliação: </strong> Achei o filme mais ou menos,
+                  esperava mais dos atores. O principal ponto foi a imagem que
+                  deu um ânimo maior para assistir.
+                </p>
+                <div class="d-inline-flex mb-5">
                   <img src="images/star-solid.svg" alt="estrela" width="16px" />
                   <img src="images/star-solid.svg" alt="estrela" width="16px" />
                   <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                  <img src="images/star-regular.svg" alt="estrela" width="16px" />
-
+                  <img
+                    src="images/star-regular.svg"
+                    alt="estrela"
+                    width="16px"
+                  />
+                  <img
+                    src="images/star-regular.svg"
+                    alt="estrela"
+                    width="16px"
+                  />
+                  &nbsp;
+                  <strong>09/10/2022</strong>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-item" data-bs-interval="10000">
-          <div class="container">
-            <div class="row bg-ligh">
-              <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/Vu7-JZOzOFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-              <div class="col-lg-5 col-md-5 col-sm-12">
-                <h3 class="text-start">Avatar: O caminho da Água</h3>
-                <p>Avatar: The Way of Water e um filme épico de ficção científica americano co-escrito, co-editado, co-produzido e dirigido por James Cameron, e produzido pela 20th Century S...</p>
-                <div class="d-inline-flex justify-content-between">
-                  <p><strong>Diretor: </strong>James Cameron</p>
-                  <p><strong>Roteiro: </strong>Simon Franglen</p>
+        <!-- <div class="row mt-4 mb-4">
+          <div class="col-12 text-end">
+            <button class="btn btn-primary">
+              <img src="images/plus-solid.svg" />Carregar mais avaliações
+            </button>
+          </div>
+        </div> -->
+      </section>
+
+      <section id="entrevistas" class="container-fluid bg-warning">
+        <div class="container pt-5 pb-5">
+          <h2 class="text-start mb-5">Entrevistas & Making Of</h2>
+          <div class="container mb-4 mt-4">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                <iframe
+                  width="460"
+                  height="215"
+                  src="https://www.youtube.com/embed/NCGp5d2OpPc"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <h4><strong>Filme: </strong>Black Panther: Wakanda Forever</h4>
+                <p><strong>Diretor: </strong>Ryan Coogler</p>
+                <div class="d-flex">
+                  <p class="pe-xl-4">
+                    <strong>Roteiro: </strong>Ryan Coogler e Joe Robert Cole
+                  </p>
                   <p><strong>Estreia: </strong>2022</p>
                 </div>
-                <div class="d-inline-flex">
-                  <p><strong>Elenco: </strong>Sam Worthington | Zoë Saldaña | Sigourney Weaver</p>
-                </div>
-                <br>
-                <div class="d-inline-flex">
-                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                  <img src="images/star-regular.svg" alt="estrela" width="16px" />
-
-                </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="10000">
-          <div class="container">
-            <div class="row bg-ligh">
-              <div class="col-lg-6 col-md-6 col-sm-12"><iframe width="560" height="315" src="https://www.youtube.com/embed/oHDi01Yn4tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-              <div class="col-lg-5 col-md-5 col-sm-12">
-                <h3 class="text-start">Pantera Negra: Wakanda Para Sempre</h3>
-                <p>Black Panther: Wakanda Forever é um futuro filme estadunidense de super-herói baseado no personagem Pantera Negra da Marvel Comics. Produzido pelo Marvel Studios e distrib...</p>
-                <div class="d-inline-flex">
-                  <p><strong>Diretor: </strong>Ryan Coogler</p>
-                  <p><strong>Roteiro: </strong>Kevin Feige</p>
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                <iframe
+                  width="460"
+                  height="215"
+                  src="https://www.youtube.com/embed/V5GTOWDlfWo"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <h4><strong>Filme: </strong>Top Gun: Maverick</h4>
+                <p><strong>Diretor: </strong>Joseph Kosinski</p>
+                <div class="d-flex">
+                  <p class="pe-xl-4">
+                    <strong>Roteiro: </strong>Jim Cash, Jack Epps Jr. e Peter
+                    Creig
+                  </p>
                   <p><strong>Estreia: </strong>2022</p>
                 </div>
-                <div class="d-inline-flex">
-                  <p><strong>Elenco: </strong>Letitia Wright | Lupita Nyong'o | Danai Gurira</p>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                <iframe
+                  width="460"
+                  height="215"
+                  src="https://www.youtube.com/embed/5yOJFJHqAms"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <h4>
+                  <strong>Filme: </strong>Harry Potter and the Order of the
+                  Phoenix
+                </h4>
+                <p><strong>Diretor: </strong>David Yates</p>
+                <div class="d-flex">
+                  <p class="pe-xl-4">
+                    <strong>Roteiro: </strong>Michael Goldenberg e J.K. Rowling
+                  </p>
+                  <p><strong>Estreia: </strong>2007</p>
                 </div>
-                <br>
-                <div class="d-inline-flex">
-                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                  <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                  <img src="images/star-regular.svg" alt="estrela" width="16px" />
-
-                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </section>
-
-    <section>
-      <div class="container-fluid bg-warning pt-5 pb-5">
-        <div class="container" id="destaques">
-          <div class="row mb-5 pt-5 justify-content-between">
-            <div class="col-6 text-start">
-              <h2 class="">Filmes Populares</h2>
-            </div>
-            <div class="col-6 text-end">
-              <label for="" class="form-label"></label>
-              <select class="form-select form-select-lg" name="" id="ddl-menu-destaque">
-                <option selected>Selecione</option>
-              </select>
-            </div>
-          </div>
-          <div class="row align-items-center" id="em-destaque">
-          </div>
-          <div class="row mt-5 mb-5">
-            <div class="col-12 text-end">
-              <button class="btn btn-primary" id="btn_carregarMaisFilmes"><img src="images/plus-solid.svg" />Carregar mais filmes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="avaliacoes" class="container mb-5 mt-5">
-      <h2 class="text-start mb-5">Últimas Avaliações</h2>
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <div class="row">
-            <div class="col-lg-2 d-lg-block d-md-none user-avatar">
-              <img src="images/user-solid.svg" alt="estrela" />
-            </div>
-            <div class="col-lg-10 col-md-12">
-              <h3>
-                Nome do Avaliador
-              </h3>
-              <p><strong>Avaliação: </strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laborum nesciunt quia sunt dignissimos autem inventore illo culpa necessitatibus quasi at vero expedita, esse sapiente, omnis impedit distinctio? Vero ipsum, deleniti eveniet explicabo suscipit provident.</p>
-              <div class="d-inline-flex">
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-regular.svg" alt="estrela" width="16px" />
-
-                <strong>02/09/2022</strong>
+            <!-- <div class="row mt-4 mb-4">
+              <div class="col-12 text-end">
+                <button class="btn btn-primary">
+                  <img src="images/plus-solid.svg" />Carregar mais filmes
+                </button>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <div class="row">
-            <div class="col-lg-2 d-lg-block d-md-none user-avatar">
-              <img src="images/user-solid.svg" alt="estrela" />
-            </div>
-            <div class="col-lg-10 col-md-12">
-              <h3>
-                Nome do Avaliador
-              </h3>
-              <p><strong>Avaliação: </strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laborum nesciunt quia sunt dignissimos autem inventore illo culpa necessitatibus quasi at vero expedita, esse sapiente, omnis impedit distinctio? Vero ipsum, deleniti eveniet explicabo suscipit provident.</p>
-              <div class="d-inline-flex">
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-regular.svg" alt="estrela" width="16px" />
-
-                <strong>02/09/2022</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <div class="row">
-            <div class="col-lg-2 d-lg-block d-md-none user-avatar">
-              <img src="images/user-solid.svg" alt="estrela" />
-            </div>
-            <div class="col-lg-10 col-md-12">
-              <h3>
-                Nome do Avaliador
-              </h3>
-              <p><strong>Avaliação: </strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam laborum nesciunt quia sunt dignissimos autem inventore illo culpa necessitatibus quasi at vero expedita, esse sapiente, omnis impedit distinctio? Vero ipsum, deleniti eveniet explicabo suscipit provident.</p>
-              <div class="d-inline-flex">
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-solid.svg" alt="estrela" width="16px" />
-                <img src="images/star-regular.svg" alt="estrela" width="16px" />
-
-                <strong>02/09/2022</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="row mt-5 mb-5">
-        <div class="col-12 text-end">
-          <button class="btn btn-primary "><img src="images/plus-solid.svg" />Carregar mais avaliações</button>
-        </div>
-      </div>
-    </section>
-
-    <section id="entrevistas" class="container-fluid bg-light pt-5 pb-5">
-      <div class="container">
-        <h2 class="text-start mb-5">Entrevistas & Making Of</h2>
-        <div class="container mb-5 mt-5 ">
-          <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <iframe width="460" height="215" src="https://www.youtube.com/embed/NCGp5d2OpPc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <h4>Black Panther: Wakanda Forever</h4>
-              <p><strong>Diretor: </strong>Ryan Coogler</p>
-              <div class="d-flex">
-                <p class="pe-xl-4"><strong>Roteiro: </strong>Ryan Coogler e Joe Robert Cole</p>
-                <p><strong>Estreia: </strong>2022</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <iframe width="460" height="215" src="https://www.youtube.com/embed/V5GTOWDlfWo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <h4>Top Gun: Maverick</h4>
-              <p><strong>Diretor: </strong>Joseph Kosinski</p>
-              <div class="d-flex">
-                <p class="pe-xl-4"><strong>Roteiro: </strong>Jim Cash, Jack Epps Jr. e Peter Creig</p>
-                <p><strong>Estreia: </strong>2022</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <iframe width="460" height="215" src="https://www.youtube.com/embed/5yOJFJHqAms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <h4>Harry Potter and the Order of the Phoenix</h4>
-              <p><strong>Diretor: </strong>David Yates</p>
-              <div class="d-flex">
-                <p class="pe-xl-4"><strong>Roteiro: </strong>Michael Goldenberg e J.K. Rowling</p>
-                <p><strong>Estreia: </strong>2007</p>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-5 mb-5">
-            <div class="col-12 text-end">
-              <button class="btn btn-primary "><img src="images/plus-solid.svg" />Carregar mais filmes</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      </section>
 
       <div class="container">
-        <div class="row mb-5 mt-5">
+        <div class="row mb-4 mt-4">
           <section id="novidades" class="col-lg-8 col-md-8 col-sm-12">
-            <div class="container-fluid">
-              <h2 class="text-start mb-5">Novidades</h2>
-              <div id="data-from-movie" class="row"></div>
+            <h2 class="text-start mb-2">Novidades</h2>
+            <div class="row">
+              <ul>
+                <li class="d-flex flex-lg-row flex-column">
+                  <img src="images/news1.jpg" alt="" />
+                  <div>
+                    <h3>
+                      Um dos looks mais icônicos do cinema foi criado por
+                      acidente
+                    </h3>
+                    <p>
+                      Jennifer Beals revelou a história por trás do famoso
+                      casaco que usou para fazer o pôster do filme.
+                    </p>
+                    <p class="tags">
+                      <span>look</span><span>cinema</span><span>filme</span>
+                    </p>
+                  </div>
+                </li>
+                <li class="d-flex flex-lg-row flex-column">
+                  <img src="images/news2.jpg" alt="" />
+                  <div>
+                    <h3>
+                      Halloween Ends marca a despedida de Jamie Lee Curtis da
+                      franquia de terror: "Isso é muito especial para mim"
+                    </h3>
+                    <p>
+                      Halloween Ends tem o confronto final entre Michael Myers e
+                      Laurie Strode, personagem de Jamie Lee Curtis na franquia.
+                    </p>
+                    <p class="tags">
+                      <span>terror</span><span>celebridade</span
+                      ><span>filme</span>
+                    </p>
+                  </div>
+                </li>
+                <li class="d-flex flex-lg-row flex-column">
+                  <img src="images/news3.jpg" alt="" />
+                  <div>
+                    <h3>
+                      Esse anime acabou de completar 27 anos e impactou todo uma
+                      geração
+                    </h3>
+                    <p>
+                      Neon Genesis Evangelion completou 27 anos na última
+                      terça-feira (04).
+                    </p>
+                    <p class="tags">
+                      <span>anime</span><span>antigo</span><span>desenho</span>
+                    </p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </section>
           <section id="sobre" class="col-lg-4 col-md-4 col-sm-12">
-            <h2 class="text-start mb-2 mt-5">Sobre</h2>
-            <p>Somos um canal especializado em mídia visual, seja cinema, séries, animes, etc.</p>
-
-            <h2 class="text-start mb-2 mt-5">Editorial</h2>
+            <h2 class="text-start mb-2 mt-4">Sobre</h2>
+            <p>
+              Um site feito para disciplina de Padrões Web - Html, Css e
+              Javascript do programa de pós graduação PUC Minas.
+            </p>
+            <p>
+              Todos os dados aqui foram retirados manualmente pelos alunos e
+              seguimos o wireframe entregue pelo professor Rommel.
+            </p>
+            <p>
+              As imagens e dados utilizadas no sistema foram obtidas no portal
+              <a href="https://www.adorocinema.com" target="_blank"
+                >Adoro Cinema</a
+              >.
+            </p>
+            <h2 class="text-start mb-2 mt-4">Editorial</h2>
             <ul class="editorial-list">
-              <li><b>Redação</b>João Gilberto</li>
-              <li><b>Pesquisa</b> Nome do Pesquisador</li>
-              <li><b>Gerente Geral</b> Nome do Editor Chefe</li>
+              <li><b>Redação:</b> Carlos Nassif</li>
+              <li><b>Pesquisa:</b> Lucas Felisberto</li>
+              <li><b>Gerente Geral:</b> Wilson Seabra</li>
             </ul>
 
-
-            <h2 class="text-start mb-2 mt-5">redes sociais</h2>
+            <h2 class="text-start mb-2 mt-4">redes sociais</h2>
 
             <ul class="socials-list">
-              <li><a href="https://www.facebook.com" target="_blank">
-                  <img src="./images/facebook.svg" alt="">
-                </a></li>
-              <li><a href="https://www.twitter.com" target="_blank">
-                  <img src="./images/twitter.svg" alt="">
-                </a></li>
-              <li><a href="https://www.instagram.com" target="_blank"><img src="./images/instagram.svg" alt="" srcset=""></a></li>
+              <li>
+                <a href="https://www.facebook.com" target="_blank">
+                  <img src="./images/facebook.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.twitter.com" target="_blank">
+                  <img src="./images/twitter.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com" target="_blank"
+                  ><img src="./images/instagram.svg" alt="" srcset=""
+                /></a>
+              </li>
             </ul>
-
           </section>
         </div>
       </div>
-  </main>
+    </main>
 
+    <footer class="footer">
+      <p>
+        Copyright 2020 - Disciplina de Desenvolvimento de Interfaces Web -
+        <b>ICEI PUC MINAS</b>
+      </p>
+      <h2>
+        <a class="navbar-brand text-light" href="#"
+          ><strong>Filmes.com</strong></a
+        >
+      </h2>
+    </footer>
 
+    <script src="js/index.js"></script>
+    <!-- <script src="js/search.js"></script> -->
 
-  <footer class="footer container-fluid">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-4 col-sm-12 justify-content-end">
-          <a class="navbar-brand" href="#">Hidden brand</a>
-        </div>
-        <div class="col-lg-6 col-md-8 col-sm-12">
-          <p>
-            Copyright 2022 - Disciplina de Desenvolvimento de Interfaces Web -
-            <strong>IEC PUC MINAS</strong>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <script
+      src="https://kit.fontawesome.com/49ab1bcb55.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="js/index.js"></script>
-  <!-- <script src="js/search.js"></script> -->
-
-  <script src="https://kit.fontawesome.com/49ab1bcb55.js" crossorigin="anonymous"></script>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
-  </script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

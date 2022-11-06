@@ -1,4 +1,7 @@
-let movieId = window.location.hash.split('=')[1];
+const urlSearchParams = new URLSearchParams(window.location.search);
+const movieId = urlSearchParams.get('id');
+const fromSearch = urlSearchParams.get('fromSearch');
+
 // movieId = '436270';
 const api_key = '092359d9c97f9c3506f7647df0f40315';
 const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&language=pt-BR`;
@@ -26,26 +29,33 @@ fetch(url).then(function (response) {
   var contentType = response.headers.get('content-type');
   if (contentType && contentType.indexOf('application/json') !== -1) {
     return response.json().then(function (json) {
+      if (fromSearch) {
+        if (json.homepage) {
+          window.location.href = json.homepage;
+        } else {
+          console.error('Without homepage!');
+        }
+      }
       let ano = json.release_date;
       ano = ano.split('-');
       ano = ano[0];
       let hour = toHoursAndMinutes(json.runtime);
       document.getElementById('data-title').innerHTML += json.title;
       document.getElementById(
-        'original-title',
+        'original-title'
       ).innerHTML += `${json.original_title}`;
       document.getElementById('release_year').innerHTML += ano;
       document.getElementById('popularity').innerHTML += Math.round(
-        json.popularity,
+        json.popularity
       );
       document.getElementById('vote_average').innerHTML += Math.round(
-        json.vote_average,
+        json.vote_average
       );
       document.getElementById(
-        'runtime',
+        'runtime'
       ).innerHTML += `${hour.hours}hs ${hour.minutes}min`;
       document.getElementById('imageBackDrop').innerHTML += imageBackDrop(
-        json.poster_path,
+        json.poster_path
       );
       document.getElementById('overview').innerHTML += json.overview;
       json.production_companies.map(
@@ -53,9 +63,9 @@ fetch(url).then(function (response) {
           (document.getElementById('production_companies').innerHTML +=
             item.logo_path != null
               ? `<li class="border-0 list-group-item">${imageProducer(
-                  item.logo_path,
+                  item.logo_path
                 )}</li>`
-              : `<li class="list-group-item border-0">${item.name}</li>`),
+              : `<li class="list-group-item border-0">${item.name}</li>`)
       );
     });
   } else {
