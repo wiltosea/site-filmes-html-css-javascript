@@ -21,22 +21,22 @@ fetch(
   }
 });
 
-fetch(url + currentPage).then(function (response) {
-  let contentType = response.headers.get('content-type');
-  if (contentType && contentType.indexOf('application/json') !== -1) {
-    return response.json().then(function (json) {
-      for (let i = 0; i <= json.results.length; i++) {
-        if (json?.results?.[i]?.title) {
-          document.getElementById(
-            'data-from-movie'
-          ).innerHTML += `<span>${json.results[i].title}</span>`;
-        }
-      }
-    });
-  } else {
-    console.log("Oops, we haven't got JSON!");
-  }
-});
+// fetch(url + currentPage).then(function (response) {
+//   let contentType = response.headers.get('content-type');
+//   if (contentType && contentType.indexOf('application/json') !== -1) {
+//     return response.json().then(function (json) {
+//       for (let i = 0; i <= json.results.length; i++) {
+//         if (json?.results?.[i]?.title) {
+//           document.getElementById(
+//             'data-from-movie'
+//           ).innerHTML += `<span>${json.results[i].title}</span>`;
+//         }
+//       }
+//     });
+//   } else {
+//     console.log("Oops, we haven't got JSON!");
+//   }
+// });
 
 // START OF IMAGENS EM DESTAQUE
 
@@ -114,7 +114,7 @@ function getImagesFromFilms(url, qtdFilmes) {
               </div>
               <div class="card-footer d-flex justify-content-between align-items-center">
                 <span class="">Ano: ${ano}</span>
-                <a href="detalhes.html#id=${json.results[i].id}">
+                <a href="detalhes.html?id=${json.results[i].id}">
                   <button class="btn btn-warning">Ver Mais</button>
                 </a>
               </div>

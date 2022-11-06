@@ -6,9 +6,12 @@
 
   --azul-100: #000033;
   --azul-300: #33aadd;
-  --laranja: #F29F05;
-  --vermelho: #F23030;
+  --laranja: #f29f05;
+  --vermelho: #f23030;
   --branco: #f2f2f2;
+
+  /* --amarelo: #f2cb05;
+  --verde: #1d594e; */
 }
 
 .user-avatar img {
@@ -22,10 +25,9 @@
 .btn.btn-primary {
   background-color: var(--azul-300) !important;
   border: var(--azul-300) !important;
-  ;
 }
 
-.btn.btn-primary>img {
+.btn.btn-primary > img {
   width: 16px;
   padding-right: 4px;
 }
@@ -114,7 +116,7 @@ iframe {
 
 a.navbar-brand.text-light:after {
   content: '';
-  background-color: #FFC107;
+  background-color: #ffc107;
   height: 6px;
   width: 100%;
   display: block;
@@ -134,4 +136,93 @@ a.navbar-brand.text-light:after {
 .text-truncate-personal {
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px;
+  background-color: var(--azul-300);
+  color: white;
+}
+
+.footer p {
+  font-weight: 300;
+  margin: 0;
+}
+
+.footer b {
+  font-weight: 600;
+}
+
+section#sobre ul,
+section#novidades ul {
+  list-style: none;
+  padding: 0;
+}
+
+section#sobre ul.editorial-list li {
+  padding-left: 1.5em;
+}
+
+section#sobre ul.editorial-list li::before {
+  content: '\f406';
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.5em;
+  width: 1.5em;
+}
+
+section#sobre ul.socials-list {
+  display: flex;
+}
+
+section#sobre ul.socials-list li img {
+  height: 2em;
+  margin: 0.5em;
+}
+
+section#sobre ul.socials-list li:first-child img {
+  margin-left: 0;
+}
+
+iframe {
+  max-width: 100%;
+  max-height: auto;
+}
+section#novidades ul li {
+  display: flex;
+  margin-left: 1em;
+}
+
+section#novidades ul li img {
+  margin-right: 2em;
+  max-width: 300px;
+  height: auto;
+  object-fit: scale-down;
+}
+
+section#novidades ul li {
+  margin-right: 2em;
+  padding: 2em 0;
+}
+
+section#novidades ul li:not(:last-child) {
+  border-bottom: solid var(--verde) 1px;
+}
+
+section#novidades ul li p.tags span {
+  background-color: var(--verde);
+  color: white;
+  margin: 0 1em;
+  padding: 0.2em 0.6em;
+  border-radius: 1em;
+  font-size: 0.8em;
+}
+
+section#sobre a {
+  color: black;
+  text-decoration: underline;
 }

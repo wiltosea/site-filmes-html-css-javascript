@@ -25,7 +25,7 @@ function imageBackDrop(image) {
 
 function search(termo) {
   fetch(
-    `${end_point}/search/movie?api_key=${api_key}&query=${termo}&language=pt-BR`,
+    `${end_point}/search/movie?api_key=${api_key}&query=${termo}&language=pt-BR`
   ).then(function (response) {
     var contentType = response.headers.get('content-type');
     if (contentType && contentType.indexOf('application/json') !== -1) {
@@ -57,7 +57,9 @@ function search(termo) {
               </div>
               <div class="card-footer d-flex justify-content-between align-items-center">
                 <span class="">Ano: ${ano(json.results[i].release_date)}</span>
-                <a href="detalhes.html#id=${json.results[i].id}">
+                <a href="detalhes.html?id=${
+                  json.results[i].id
+                }&fromSearch=true">
                   <button class="btn btn-warning">Ver Mais</button>
                 </a>
               </div>
