@@ -8,7 +8,7 @@ Atividade avaliativa do curso de pós graduação da Puc Minas - Especializaçã
 
 O site que você fará deve atender aos seguintes requisitos:
 
-- [ ] O site deve ser publicado em um ambiente da Internet (Repl.it, GitHub Pages, Heroku, Netlify ou outro a sua escolha);
+- [x] O site deve ser publicado em um ambiente da Internet (Repl.it, GitHub Pages, Heroku, Netlify ou outro a sua escolha);
 - [x] O site deverá ser responsivo permitindo a visualização em um celular de forma adequada;
 - [x] O site deve ter uma Home-Page (index.html) com a listagem dinâmica de filmes/séries obtidos via API The Movie DB à escolha do aluno que pode ser qualquer das alternativas como: (1) filmes populares, (2) filmes no cinema, (3) séries de TV ou outra listagem a ser projetada pelo aluno a partir da mesma API. Nessa página inicial, devem ser obedecidos os seguintes requisitos:
   - [x] Para cada item da listagem devem ser exibidos um mínimo de três (3) dados textuais obtidos por meio da API que descrevam sucintamente o referido item (Ex: título, data, descrição, categoria, etc) - Optamos por Título, Descrição e Ano;

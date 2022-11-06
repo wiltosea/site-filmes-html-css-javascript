@@ -2,24 +2,24 @@ const api_key = '092359d9c97f9c3506f7647df0f40315';
 const url = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=pt-BR&page=`;
 let currentPage = 1;
 
-fetch(
-  `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}&language=pt-br`
-).then(function (response) {
-  let contentType = response.headers.get('content-type');
-  if (contentType && contentType.indexOf('application/json') !== -1) {
-    return response.json().then(function (json) {
-      for (let i = 0; i <= json.genres.length; i++) {
-        if (json?.genres?.[i]?.name) {
-          document.getElementById(
-            'ddl-menu-destaque'
-          ).innerHTML += `<option value=${json.genres[i].name} class="dropdown-item" id="ddl-menu-destaque-option" key=${json.genres[i].id}>${json.genres[i].name}</option>`;
-        }
-      }
-    });
-  } else {
-    console.log("Oops, we haven't got JSON!");
-  }
-});
+// fetch(
+//   `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}&language=pt-br`
+// ).then(function (response) {
+//   let contentType = response.headers.get('content-type');
+//   if (contentType && contentType.indexOf('application/json') !== -1) {
+//     return response.json().then(function (json) {
+//       for (let i = 0; i <= json.genres.length; i++) {
+//         if (json?.genres?.[i]?.name) {
+//           document.getElementById(
+//             'ddl-menu-destaque'
+//           ).innerHTML += `<option value=${json.genres[i].name} class="dropdown-item" id="ddl-menu-destaque-option" key=${json.genres[i].id}>${json.genres[i].name}</option>`;
+//         }
+//       }
+//     });
+//   } else {
+//     console.log("Oops, we haven't got JSON!");
+//   }
+// });
 
 // fetch(url + currentPage).then(function (response) {
 //   let contentType = response.headers.get('content-type');
@@ -63,16 +63,16 @@ const loadMore = () => {
 
 loadMore();
 
-// DropDownList - Menu de destaque
-const ddlMenuDestaque = () => {
-  const genre = document.getElementById('ddl-menu-destaque');
-  genre.addEventListener('change', () => {
-    const option = document.getElementById('ddl-menu-destaque-option');
-    console.log(option);
-  });
-};
+// // DropDownList - Menu de destaque
+// const ddlMenuDestaque = () => {
+//   const genre = document.getElementById('ddl-menu-destaque');
+//   genre.addEventListener('change', () => {
+//     const option = document.getElementById('ddl-menu-destaque-option');
+//     console.log(option);
+//   });
+// };
 
-ddlMenuDestaque();
+// ddlMenuDestaque();
 
 // end of DropDownList - Menu de destaque
 
